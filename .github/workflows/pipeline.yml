@@ -38,3 +38,8 @@ jobs:
 
        - name: Run Coverage Tests
          run: python3 -m coverage run -m unittest main_tests.py
+
+       - name: Generate Coverage Report
+         run: |
+           python3 -m coverage report |
+           python3 -m coverage json
