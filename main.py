@@ -1,9 +1,11 @@
 import requests
 
 
+JOKE_URL = "http://api.icndb.com/jokes/random"
+
+
 def get_joke():
-    url = "http://api.icndb.com/jokes/random"
-    response = requests.get(url)
+    response = requests.get(JOKE_URL)
 
     if response.status_code == 200:
         joke = response.json()['value']['joke']
