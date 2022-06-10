@@ -35,3 +35,6 @@ jobs:
 
        - name: Validate Coverage.py Version
          run: python3 -c 'import coverage; print(coverage.__version__)'
+
+       - name: Run Coverage Tests
+         run: python3 -m coverage run -m unittest test-basic-coverage.py
