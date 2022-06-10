@@ -41,8 +41,18 @@ jobs:
 
        - name: Generate Coverage Report
          run: |
+           python3 -m coverage report
+
+       - name: Writing JSON report to coverage.json
+         run: |
            python3 -m coverage report |
            python3 -m coverage json
 
+       - name: Print coverage.json
+         run: cat coverage.json
+
        - name: Isolate Total Coverage
          run: jq .totals.percent_covered coverage.json
+
+       - name: measure branch coverage
+         run: python3 -m coverage run --branch main.py

@@ -11,7 +11,3 @@ def get_joke():
         joke = "No jokes"
 
     return joke
-
-
-if __name__ == "__main__":
-    print(f"JOKE: {get_joke()}")
