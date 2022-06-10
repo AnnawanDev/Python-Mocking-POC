@@ -1,7 +1,7 @@
 import unittest
 
 from main import get_joke
-from unittest.mock import patch, MagicMock, Mock
+from unittest.mock import patch, MagicMock
 
 
 class TestSuite(unittest.TestCase):
