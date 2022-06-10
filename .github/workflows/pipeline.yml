@@ -55,4 +55,6 @@ jobs:
          run: jq .totals.percent_covered coverage.json
 
        - name: measure branch coverage
-         run: python3 -m coverage run --branch main.py
+         run: |
+           python3 -m coverage run --branch main.py
+           python3 -m coverage report
