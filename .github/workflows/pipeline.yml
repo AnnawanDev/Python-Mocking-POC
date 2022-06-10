@@ -43,3 +43,6 @@ jobs:
          run: |
            python3 -m coverage report |
            python3 -m coverage json
+
+       - name: Isolate Total Coverage
+         run: jq .totals.percent_covered coverage.json
