@@ -31,4 +31,9 @@ jobs:
        - name: Test with unittest
          run: |
            python main_tests.py
-           
+
+     - name: Install Coverage.py
+        run: pip3 install -U coverage
+
+      - name: Validate Coverage.py Version
+        run: python3 -c 'import coverage; print(coverage.__version__)'
