@@ -67,6 +67,6 @@ jobs:
           run: |
             echo "Passes code quality check"
 
-        - if: steps.code_coverage_percentage.outputs.result < ${{ env.CODE_QUALITY_THRESHOLD }
+        - if: steps.code_coverage_percentage.outputs.result < ${{ env.CODE_QUALITY_THRESHOLD }}
           name: bad_quality
           run: core.setFailed('Fails code quality check.  Code coverage needs to be ${{ env.CODE_QUALITY_THRESHOLD }% or better')
