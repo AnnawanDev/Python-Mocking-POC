@@ -2,7 +2,7 @@
 This proof of concept is set around 3 objectives:
 - basic mocking example in Python
 - determing code coverage stats using the Coverage.py module
-- implement a basic code quality gating mechanism.
+- implement a basic code quality gating mechanism using Python and Coverage.py
 
 
 ## Mocking
