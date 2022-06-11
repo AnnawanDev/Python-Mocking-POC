@@ -40,9 +40,6 @@ jobs:
         - name: Test with unittest
           run: python main_tests.py
 
-#       - name: Install Coverage.py
-#         run: pip3 install -U coverage
-
         - name: Run Coverage Tests
           run: python3 -m coverage run -m unittest main_tests.py
 

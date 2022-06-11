@@ -8,7 +8,7 @@ class TestSuite(unittest.TestCase):
 
     # test happy path where response is 200
     @patch('main.requests')
-    def test_get_joke(self, mock_requests):
+    def x_get_joke(self, mock_requests):
         # then set up magicmock object with mocked values to return
         mock_response = MagicMock()
         mock_response.status_code = 200
