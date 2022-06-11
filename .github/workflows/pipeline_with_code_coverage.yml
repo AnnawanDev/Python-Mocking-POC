@@ -55,7 +55,7 @@ jobs:
         - name: Isolate Total Coverage
           id: code_coverage_percentage
           run: | 
-#            jq .totals.percent_covered coverage.json
+            jq .totals.percent_covered coverage.json
             echo "::set-output name=result::`jq .totals.percent_covered coverage.json`"
 
 #      Code needs 80% or greater code coverage quality
