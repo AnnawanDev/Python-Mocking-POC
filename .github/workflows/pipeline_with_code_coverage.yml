@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ main ]
 
+env:
+  CODE_QUALITY_THRESHOLD: 80
+
 jobs:
      build:
        runs-on: ubuntu-latest
@@ -59,11 +62,11 @@ jobs:
             echo "::set-output name=result::`jq .totals.percent_covered coverage.json`"
 
 #      Code needs 80% or greater code coverage quality
-        - if: steps.code_coverage_percentage.outputs.result >= 80
+        - if: steps.code_coverage_percentage.outputs.result >= ${{ env.CODE_QUALITY_THRESHOLD }}
           name: good_quality
           run: |
             echo "Passes code quality check"
 
-        - if: steps.code_coverage_percentage.outputs.result < 80
+        - if: steps.code_coverage_percentage.outputs.result < ${{ env.CODE_QUALITY_THRESHOLD }
           name: bad_quality
-          run: core.setFailed('Fails code quality check.  Code coverage needs to be 80% or better')
+          run: core.setFailed('Fails code quality check.  Code coverage needs to be ${{ env.CODE_QUALITY_THRESHOLD }% or better')
